@@ -1200,19 +1200,18 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .hero__promo-num {
   font-family: 'Caveat', cursive;
-  font-size: 56px;
+  font-size: 34px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
   flex-shrink: 0;
-  letter-spacing: -0.5px;
-  transform: rotate(-3deg);
-  transform-origin: center center;
+  letter-spacing: -0.3px;
+  transform: rotate(-2deg);
 }
 .hero__promo-text {
   font-family: 'Caveat', cursive;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.15;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 /* CTA со стрелкой в кружке */
@@ -1321,9 +1320,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   .hero__image { min-height: 380px; }
 }
 @media (max-width: 768px) {
-  .hero__promo { padding: 14px 16px; gap: 14px; }
-  .hero__promo-num { font-size: 44px; }
-  .hero__promo-text { font-size: 20px; }
+  .hero__promo { padding: 14px 16px; gap: 12px; }
+  .hero__promo-num { font-size: 26px; }
+  .hero__promo-text { font-size: 26px; }
   .hero__lead { font-size: 16px; }
   .hero__chip { font-size: 12px; padding: 6px 12px; }
   .hero__avatars img { width: 34px; height: 34px; margin-left: -9px; }
@@ -1525,6 +1524,117 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   .complex-card h3 { font-size: 17px; }
 }
 
+
+/* ================================================================
+   PROOF — «Думаете, 4 см — это мало?» (3 фото живота)
+   ================================================================ */
+.proof { background: linear-gradient(180deg, #fff 0%, #fff5ef 100%); }
+.proof__head { text-align: center; margin-bottom: 40px; }
+.proof__title-mark { color: var(--color-primary); }
+.proof__lead {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin-top: 8px;
+}
+.proof__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.proof-tile {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--color-soft);
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 14px 36px rgba(31,19,0,0.10);
+  transition: transform .25s, box-shadow .25s;
+}
+.proof-tile:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(31,19,0,0.18); }
+.proof-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.proof-tile__caption {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 8px 18px;
+  border-radius: 12px;
+  transform: rotate(-3deg);
+  box-shadow: 0 8px 22px rgba(206,44,1,0.45);
+}
+.proof__footnote {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 28px 0 0;
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  .proof__grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .proof__lead { font-size: 16px; }
+  .proof-tile__caption { font-size: 28px; padding: 6px 14px; bottom: 12px; right: 12px; }
+}
+@media (max-width: 480px) {
+  .proof__grid { grid-template-columns: 1fr; max-width: 340px; }
+}
+
+/* ================================================================
+   Forwhom — grid карточек 2x3 (новый дизайн с эмодзи)
+   ================================================================ */
+.forwhom__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1080px;
+  margin: 32px auto 0;
+}
+.forwhom__card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  border: 2px solid var(--color-line);
+  border-radius: 18px;
+  padding: 24px 22px;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.forwhom__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 14px 32px rgba(206,44,1,0.10);
+}
+.forwhom__card-icon {
+  width: 52px; height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-soft);
+  border-radius: 14px;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+.forwhom__card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--color-text);
+}
+@media (max-width: 900px) {
+  .forwhom__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .forwhom__grid { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -1640,10 +1750,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 <section class="section program" id="about">
   <div class="container">
     <div class="program__head">
-      <div class="program__eyebrow">
-        <span class="program__eyebrow-dot"></span>Результаты, которые вас ждут
-      </div>
-      <h2 class="section__title program__title">
+<h2 class="section__title program__title">
         Мы разработали программу, которая <span class="program__title-mark">заставит&nbsp;ваш живот стройнеть</span>
       </h2>
       <p class="program__lead">
@@ -1663,53 +1770,37 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 </section>
 
 <!-- ============================================================ -->
-<!-- 3. ДЛЯ КОГО — формат «Вам хочется:»                          -->
 <!-- ============================================================ -->
-<section class="section forwhom" id="forwhom">
+<!-- 3. «ДУМАЕТЕ, 4 СМ — ЭТО МАЛО?» — фото-доказательство        -->
+<!-- ============================================================ -->
+<section class="section proof" id="proof">
   <div class="container">
-    <div class="forwhom__head">
-      <div class="program__eyebrow">
-        <span class="program__eyebrow-dot"></span>Кому подойдёт
-      </div>
-      <h2 class="section__title">Кому Стройный живот 3.0 поможет <span class="forwhom__title-accent">уменьшить талию</span></h2>
-      <p class="forwhom__lead">Вам хочется:</p>
+    <div class="proof__head">
+      <h2 class="section__title">Думаете, 4&nbsp;сантиметра&nbsp;— <span class="proof__title-mark">это мало?</span></h2>
+      <p class="proof__lead">Посмотрите, насколько <strong>уменьшается живот</strong> у&nbsp;наших участниц</p>
     </div>
 
-    <ul class="forwhom__list">
-      <li>
-        <span class="forwhom__bullet">✓</span>
-        <span>Влезть в любимое летнее платье или джинсы?</span>
-      </li>
-      <li>
-        <span class="forwhom__bullet">✓</span>
-        <span>Убрать «лишнее» с живота, боков и бёдер?</span>
-      </li>
-      <li>
-        <span class="forwhom__bullet">✓</span>
-        <span>Почувствовать лёгкость и упругость кожи?</span>
-      </li>
-      <li>
-        <span class="forwhom__bullet">✓</span>
-        <span>Сбросить сантиметры без жёстких диет?</span>
-      </li>
-      <li>
-        <span class="forwhom__bullet">✓</span>
-        <span>Заниматься дома, без боли в коленях и спине?</span>
-      </li>
-      <li>
-        <span class="forwhom__bullet">✓</span>
-        <span>Получить поддержку и не сорваться на третий день?</span>
-      </li>
-    </ul>
+    <div class="proof__grid">
+      <figure class="proof-tile">
+        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/cases/case-1.webp" alt="Результат участницы — до и после" loading="lazy" />
+        <figcaption class="proof-tile__caption">−4 см</figcaption>
+      </figure>
+      <figure class="proof-tile">
+        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/cases/case-3.webp" alt="Результат участницы — до и после" loading="lazy" />
+        <figcaption class="proof-tile__caption">−5 см</figcaption>
+      </figure>
+      <figure class="proof-tile">
+        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/cases/case-5.webp" alt="Результат участницы — до и после" loading="lazy" />
+        <figcaption class="proof-tile__caption">−6 см</figcaption>
+      </figure>
+    </div>
 
-    <p class="forwhom__conclusion">
-      Если вы кивнули хотя бы дважды&nbsp;— <strong>Стройный живот 3.0 для вас</strong>.
-    </p>
+    <p class="proof__footnote">И&nbsp;это не&nbsp;всё&nbsp;— ниже на&nbsp;странице покажем больше живых кейсов</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 4. СТРОЙНЫЙ ЖИВОТ 3.0 — ЦЕЛЫЙ КОМПЛЕКС ПОХУДЕНИЯ            -->
+<!-- 4. ПРОГРАММА — 5 карточек с экспертами — ЦЕЛЫЙ КОМПЛЕКС ПОХУДЕНИЯ            -->
 <!-- ============================================================ -->
 <section class="section complex" id="complex">
   <div class="container">
@@ -1890,7 +1981,30 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 </section>
 
 <!-- ============================================================ -->
-<!-- 6. КАК ИЗМЕНИЛИСЬ УЧАСТНИЦЫ — единый грид кейсы + отзывы     -->
+<!-- 6. КАК ИЗМЕНИЛИСЬ УЧАСТНИЦЫ — единый грид кейсы <!-- 6. ДЛЯ КОГО — кому Стройный живот поможет                          -->
+<!-- ============================================================ -->
+<section class="section forwhom" id="forwhom">
+  <div class="container">
+    <div class="forwhom__head">
+<h2 class="section__title">У&nbsp;вас получится сбросить <span class="forwhom__title-accent">4&nbsp;сантиметра к&nbsp;лету</span>, если&nbsp;вы:</h2>
+    </div>
+
+    <div class="forwhom__grid">
+      <div class="forwhom__card"><span class="forwhom__card-icon">👗</span><p>Хотите влезть в&nbsp;любимое летнее платье или джинсы</p></div>
+      <div class="forwhom__card"><span class="forwhom__card-icon">✨</span><p>Хотите увидеть стройную версию себя в&nbsp;зеркале</p></div>
+      <div class="forwhom__card"><span class="forwhom__card-icon">📏</span><p>Хотите убрать &laquo;лишнее&raquo; с&nbsp;живота, боков и&nbsp;бёдер</p></div>
+      <div class="forwhom__card"><span class="forwhom__card-icon">🥗</span><p>Не&nbsp;готовы сидеть на&nbsp;жёстких диетах и&nbsp;считать калории</p></div>
+      <div class="forwhom__card"><span class="forwhom__card-icon">🏠</span><p>Хотите заниматься дома&nbsp;— без боли в&nbsp;коленях и&nbsp;спине</p></div>
+      <div class="forwhom__card"><span class="forwhom__card-icon">💪</span><p>Хотите получить поддержку и&nbsp;не&nbsp;сорваться на&nbsp;третий день</p></div>
+    </div>
+
+    <p class="forwhom__conclusion">
+      Если вы кивнули хотя бы дважды&nbsp;— <strong>Стройный живот 3.0 точно для вас</strong>.
+    </p>
+  </div>
+</section>
+
++ отзывы     -->
 <!-- ============================================================ -->
 <section class="section cases" id="cases">
   <div class="container">
