@@ -20,12 +20,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://static.tildacdn.com" crossorigin />
   <!-- Только нужные веса (было 5×2=10, стало 2+3=5) -->
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Inter:wght@400;500;600&display=swap&subset=latin,cyrillic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap&subset=latin,cyrillic" rel="stylesheet" />
 
   <!-- Preload hero-картинки — попадает в первый экран, ускоряет LCP -->
   <link rel="preload" as="image" href="https://static.tildacdn.com/tild3666-3131-4131-b165-646466333162/522A7887.jpg" fetchpriority="high" />
 
-  <link rel="stylesheet" href="styles.css?v=sj3-c" />
+  <link rel="stylesheet" href="styles.css?v=sj3-d" />
 </head>
 <body>
 
@@ -96,16 +96,16 @@
       <div class="hero__card">
         <div class="hero__chip">
           <span class="hero__chip-dot"></span>
-          Интенсив от&nbsp;клуба Шагай Дома
+          Флагманский интенсив от&nbsp;клуба Шагай Дома
         </div>
 
         <h1 class="hero__title">Шагаем к&nbsp;стройному животу <span class="hero__title-accent">3.0</span></h1>
 
         <p class="hero__lead">Комплекс упражнений, который за&nbsp;10&nbsp;дней уберёт от&nbsp;4&nbsp;сантиметров с&nbsp;вашей талии</p>
 
-        <div class="hero__promo">
-          <span class="hero__promo-num">−4&nbsp;см</span>
-          <span class="hero__promo-text">за 10 дней — легко!</span>
+        <div class="hero__promo hero__promo--script">
+          <span class="hero__promo-num">&minus;4&nbsp;см</span>
+          <span class="hero__promo-text">за 10 дней&nbsp;— легко!</span>
         </div>
 
         <a href="#rates" class="btn btn--white btn--lg btn--block hero__cta">
@@ -121,20 +121,13 @@
             <img src="https://static.tildacdn.com/tild6237-3661-4237-b236-396465636466/IMG_3893_1.jpg" alt="" />
           </div>
           <div class="hero__social-text">
-            <strong>1800+ участниц</strong> уже шагают<br/>с командой Шагай Дома
+            <strong>30&nbsp;000+ женщин</strong> уже похудели<br/>с&nbsp;командой Шагай Дома
           </div>
         </div>
       </div>
 
       <div class="hero__image-wrap">
         <div class="hero__image" style="background-image:url('https://static.tildacdn.com/tild3666-3131-4131-b165-646466333162/522A7887.jpg');"></div>
-        <div class="hero__floating-card">
-          <span class="hero__floating-emoji">✨</span>
-          <div>
-            <strong>Без жёстких диет</strong>
-            <small>и боли в коленях</small>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -148,7 +141,7 @@
   <div class="container">
     <div class="program__head">
       <div class="program__eyebrow">
-        <span class="program__eyebrow-dot"></span>Программа интенсива
+        <span class="program__eyebrow-dot"></span>Результаты, которые вас ждут
       </div>
       <h2 class="section__title program__title">
         Мы разработали программу, которая <span class="program__title-mark">заставит&nbsp;ваш живот стройнеть</span>
@@ -170,11 +163,62 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- 3. СТРОЙНЫЙ ЖИВОТ 3.0 — ЦЕЛЫЙ КОМПЛЕКС ПОХУДЕНИЯ            -->
+<!-- 3. ДЛЯ КОГО — формат «Вам хочется:»                          -->
 <!-- ============================================================ -->
-<section class="section complex" id="forwhom">
+<section class="section forwhom" id="forwhom">
   <div class="container">
-    <h2 class="section__title">Стройный живот 3.0&nbsp;— целый комплекс похудения</h2>
+    <div class="forwhom__head">
+      <div class="program__eyebrow">
+        <span class="program__eyebrow-dot"></span>Кому подойдёт
+      </div>
+      <h2 class="section__title">Кому Стройный живот 3.0 поможет <span class="forwhom__title-accent">уменьшить талию</span></h2>
+      <p class="forwhom__lead">Вам хочется:</p>
+    </div>
+
+    <ul class="forwhom__list">
+      <li>
+        <span class="forwhom__bullet">✓</span>
+        <span>Влезть в любимое летнее платье или джинсы?</span>
+      </li>
+      <li>
+        <span class="forwhom__bullet">✓</span>
+        <span>Убрать «лишнее» с живота, боков и бёдер?</span>
+      </li>
+      <li>
+        <span class="forwhom__bullet">✓</span>
+        <span>Почувствовать лёгкость и упругость кожи?</span>
+      </li>
+      <li>
+        <span class="forwhom__bullet">✓</span>
+        <span>Сбросить сантиметры без жёстких диет?</span>
+      </li>
+      <li>
+        <span class="forwhom__bullet">✓</span>
+        <span>Заниматься дома, без боли в коленях и спине?</span>
+      </li>
+      <li>
+        <span class="forwhom__bullet">✓</span>
+        <span>Получить поддержку и не сорваться на третий день?</span>
+      </li>
+    </ul>
+
+    <p class="forwhom__conclusion">
+      Если вы кивнули хотя бы дважды&nbsp;— <strong>Стройный живот 3.0 для вас</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 4. СТРОЙНЫЙ ЖИВОТ 3.0 — ЦЕЛЫЙ КОМПЛЕКС ПОХУДЕНИЯ            -->
+<!-- ============================================================ -->
+<section class="section complex" id="complex">
+  <div class="container">
+    <div class="program__head">
+      <div class="program__eyebrow">
+        <span class="program__eyebrow-dot"></span>Программа интенсива
+      </div>
+      <h2 class="section__title">Стройный живот 3.0&nbsp;— целый комплекс похудения</h2>
+    </div>
 
     <div class="complex__cards">
       <!-- 1. 10 дней тренировок (NEW: +3 дня) -->
@@ -237,8 +281,8 @@
         <div class="complex-card__expert complex-card__expert--multi">
           <div class="complex-card__avatar" style="background-image:url('https://static.tildacdn.com/tild3164-6335-4462-a235-313163666632/522A7273.jpg'); background-color:#f5f5f5;"></div>
           <div class="complex-card__expert-info">
-            <strong>Команда экспертов</strong>
-            <span>обновлено в&nbsp;3.0</span>
+            <strong>База знаний</strong>
+            <span>Шагай Дома</span>
           </div>
         </div>
         <h3>Комплекс заботы о&nbsp;теле</h3>

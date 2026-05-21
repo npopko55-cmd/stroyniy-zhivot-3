@@ -400,6 +400,10 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 
 /* ======================== FORWHOM (Вам хочется:) =============== */
+.forwhom__head { text-align: center; margin-bottom: 32px; }
+.forwhom__head .program__eyebrow { margin-bottom: 18px; }
+.forwhom__head .forwhom__lead { margin-top: 16px; }
+
 .forwhom__title-accent {
   display: inline-block;
   color: var(--color-primary);
@@ -1165,18 +1169,20 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   box-shadow: 0 14px 32px rgba(255,182,0,0.35);
 }
 .hero__promo-num {
-  font-family: var(--font-h);
-  font-size: 46px;
-  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  font-size: 56px;
+  font-weight: 700;
   line-height: 1;
   flex-shrink: 0;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+  transform: rotate(-3deg);
+  transform-origin: center center;
 }
 .hero__promo-text {
-  font-family: var(--font-h);
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.25;
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 /* CTA со стрелкой в кружке */
@@ -1286,8 +1292,8 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 @media (max-width: 768px) {
   .hero__promo { padding: 14px 16px; gap: 14px; }
-  .hero__promo-num { font-size: 38px; }
-  .hero__promo-text { font-size: 15px; }
+  .hero__promo-num { font-size: 44px; }
+  .hero__promo-text { font-size: 20px; }
   .hero__lead { font-size: 16px; }
   .hero__chip { font-size: 12px; padding: 6px 12px; }
   .hero__avatars img { width: 34px; height: 34px; margin-left: -9px; }
