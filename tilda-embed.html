@@ -1266,12 +1266,15 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 /* Плавающая карточка внизу фото */
 .hero__image-wrap {
   position: relative;
+  height: 100%;          /* в одну высоту с красным блоком */
+  min-height: 0;
 }
 .hero__image {
   background-size: cover;
   background-position: center 30%;  /* лицо Насти видно */
   border-radius: var(--radius-sm);
-  min-height: 520px;
+  height: 100%;          /* растягивается на высоту .hero__image-wrap */
+  min-height: 360px;
   position: relative;
   box-shadow: 0 20px 60px rgba(31,19,0,0.18);
 }
