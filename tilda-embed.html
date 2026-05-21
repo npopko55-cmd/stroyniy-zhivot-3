@@ -75,7 +75,7 @@ body {
   word-wrap: break-word;       /* длинные слова не торчат */
   overflow-wrap: break-word;
 }
-h1, h2, h3 { word-wrap: break-word; overflow-wrap: break-word; hyphens: auto; }
+h1, h2, h3 { word-wrap: break-word; overflow-wrap: break-word; hyphens: manual; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
@@ -1708,16 +1708,17 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   max-width: 880px;
 }
 .forwhom__h2-accent {
-  display: inline-block;
+  display: inline;
   background: var(--color-primary-hover);
   color: #1f1300;
-  padding: 0 14px;
+  padding: 2px 14px;
   border-radius: 10px;
   font-family: 'Caveat', cursive;
   font-size: 1.15em;
   font-weight: 700;
-  transform: rotate(-1.5deg);
-  white-space: nowrap;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  line-height: 1.4;
 }
 .forwhom--red .forwhom__list {
   display: grid;
@@ -1769,11 +1770,12 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   .forwhom__card-big { padding: 40px 28px; }
   .forwhom__h2 { font-size: 28px; }
   .forwhom--red .forwhom__list { grid-template-columns: 1fr; gap: 10px; }
-  .forwhom__h2-accent { white-space: normal; display: inline; padding: 0 10px; }
 }
 @media (max-width: 540px) {
-  .forwhom__h2 { font-size: 22px; margin-bottom: 24px; }
-  .forwhom--red .forwhom__list li { font-size: 15px; padding: 12px 14px; }
+  .forwhom__card-big { padding: 32px 20px; border-radius: 20px; }
+  .forwhom__h2 { font-size: 22px; margin-bottom: 22px; line-height: 1.25; }
+  .forwhom__h2-accent { padding: 1px 10px; font-size: 1.1em; }
+  .forwhom--red .forwhom__list li { font-size: 14px; padding: 12px 14px; }
 }
 
 </style>
