@@ -1241,9 +1241,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .hero__image {
   background-size: cover;
-  background-position: center 30%;  /* лицо Насти видно */
+  background-position: center top;  /* верх фото — лицо Насти */
   border-radius: var(--radius-sm);
-  height: 100%;          /* растягивается на высоту .hero__image-wrap */
+  height: 100%;
   min-height: 360px;
   position: relative;
   box-shadow: 0 20px 60px rgba(31,19,0,0.18);
