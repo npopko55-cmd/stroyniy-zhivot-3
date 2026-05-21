@@ -1635,6 +1635,144 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   .forwhom__grid { grid-template-columns: 1fr; }
 }
 
+
+/* ================================================================
+   PROOF — заглушки «ДО / ПОСЛЕ» (вместо реальных фото)
+   ================================================================ */
+.proof-tile--placeholder { background: transparent !important; }
+.proof-tile--placeholder .proof-tile__halves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%; height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.proof-tile__half {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8e2d8 0%, #f5f0e8 100%);
+}
+.proof-tile__half:first-child {
+  border-right: 2px dashed rgba(31,19,0,0.18);
+}
+.proof-tile__half:last-child {
+  background: linear-gradient(135deg, #fff0d9 0%, #fff5e8 100%);
+}
+.proof-tile__half-label {
+  font-family: var(--font-h);
+  font-size: 28px;
+  font-weight: 600;
+  color: rgba(31,19,0,0.35);
+  letter-spacing: 1px;
+}
+@media (max-width: 540px) {
+  .proof-tile__half-label { font-size: 22px; }
+}
+
+/* ================================================================
+   FORWHOM — красная карточка (большая, как hero)
+   ================================================================ */
+.forwhom--red { background: #fff; }
+.forwhom__card-big {
+  background: var(--color-primary);
+  border-radius: 24px;
+  padding: 60px 56px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 24px 60px rgba(206,44,1,0.20);
+}
+.forwhom__card-big::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://static.tildacdn.com/tild3562-3535-4166-b634-663130393766/SVG.png') no-repeat right center / 50% auto;
+  opacity: 0.13;
+  pointer-events: none;
+}
+.forwhom__card-big > * { position: relative; z-index: 1; }
+.forwhom__h2 {
+  font-family: var(--font-h);
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 auto 36px;
+  max-width: 880px;
+}
+.forwhom__h2-accent {
+  display: inline-block;
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.15em;
+  font-weight: 700;
+  transform: rotate(-1.5deg);
+  white-space: nowrap;
+}
+.forwhom--red .forwhom__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.forwhom--red .forwhom__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255,255,255,0.10);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 500;
+  transition: background .2s, transform .2s;
+}
+.forwhom--red .forwhom__list li:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateX(4px);
+}
+.forwhom__check {
+  flex: 0 0 26px;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.forwhom--red .forwhom__conclusion {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+.forwhom--red .forwhom__conclusion strong { color: var(--color-primary-hover); }
+@media (max-width: 900px) {
+  .forwhom__card-big { padding: 40px 28px; }
+  .forwhom__h2 { font-size: 28px; }
+  .forwhom--red .forwhom__list { grid-template-columns: 1fr; gap: 10px; }
+  .forwhom__h2-accent { white-space: normal; display: inline; padding: 0 10px; }
+}
+@media (max-width: 540px) {
+  .forwhom__h2 { font-size: 22px; margin-bottom: 24px; }
+  .forwhom--red .forwhom__list li { font-size: 15px; padding: 12px 14px; }
+}
+
 </style>
 </head>
 <body>
@@ -1776,26 +1914,45 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 <section class="section proof" id="proof">
   <div class="container">
     <div class="proof__head">
-      <h2 class="section__title">Думаете, 4&nbsp;сантиметра&nbsp;— <span class="proof__title-mark">это мало?</span></h2>
-      <p class="proof__lead">Посмотрите, насколько <strong>уменьшается живот</strong> у&nbsp;наших участниц</p>
+      <h2 class="section__title"><span class="proof__title-mark">&minus;4&nbsp;сантиметра</span> — мало?</h2>
+      <p class="proof__lead">Посмотрите, насколько живот становится стройнее на&nbsp;примере наших участниц</p>
     </div>
 
     <div class="proof__grid">
-      <figure class="proof-tile">
-        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/cases/case-1.webp" alt="Результат участницы — до и после" loading="lazy" />
+      <figure class="proof-tile proof-tile--placeholder">
+        <div class="proof-tile__halves">
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ДО</span>
+          </div>
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ПОСЛЕ</span>
+          </div>
+        </div>
         <figcaption class="proof-tile__caption">−4 см</figcaption>
       </figure>
-      <figure class="proof-tile">
-        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/cases/case-3.webp" alt="Результат участницы — до и после" loading="lazy" />
+      <figure class="proof-tile proof-tile--placeholder">
+        <div class="proof-tile__halves">
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ДО</span>
+          </div>
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ПОСЛЕ</span>
+          </div>
+        </div>
         <figcaption class="proof-tile__caption">−5 см</figcaption>
       </figure>
-      <figure class="proof-tile">
-        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/cases/case-5.webp" alt="Результат участницы — до и после" loading="lazy" />
+      <figure class="proof-tile proof-tile--placeholder">
+        <div class="proof-tile__halves">
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ДО</span>
+          </div>
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ПОСЛЕ</span>
+          </div>
+        </div>
         <figcaption class="proof-tile__caption">−6 см</figcaption>
       </figure>
     </div>
-
-    <p class="proof__footnote">И&nbsp;это не&nbsp;всё&nbsp;— ниже на&nbsp;странице покажем больше живых кейсов</p>
   </div>
 </section>
 
@@ -1981,21 +2138,23 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 </section>
 
 <!-- ============================================================ -->
-<!-- 6. КАК ИЗМЕНИЛИСЬ УЧАСТНИЦЫ — единый грид кейсы <!-- 6. ДЛЯ КОГО — кому Стройный живот поможет                          -->
+<!-- 6. ДЛЯ КОГО — красный блок                                   -->
 <!-- ============================================================ -->
-<section class="section forwhom" id="forwhom">
+<section class="section forwhom forwhom--red" id="forwhom">
   <div class="container">
-    <div class="forwhom__head">
-<h2 class="section__title">У&nbsp;вас получится сбросить <span class="forwhom__title-accent">4&nbsp;сантиметра к&nbsp;лету</span>, если&nbsp;вы:</h2>
-    </div>
+    <div class="forwhom__card-big">
+      <div class="forwhom__head">
+        <h2 class="forwhom__h2">У&nbsp;вас получится сбросить <span class="forwhom__h2-accent">4&nbsp;сантиметра к&nbsp;лету</span>, если&nbsp;вы:</h2>
+      </div>
 
-    <div class="forwhom__grid">
-      <div class="forwhom__card"><span class="forwhom__card-icon">👗</span><p>Хотите влезть в&nbsp;любимое летнее платье или джинсы</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">✨</span><p>Хотите увидеть стройную версию себя в&nbsp;зеркале</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">📏</span><p>Хотите убрать &laquo;лишнее&raquo; с&nbsp;живота, боков и&nbsp;бёдер</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">🥗</span><p>Не&nbsp;готовы сидеть на&nbsp;жёстких диетах и&nbsp;считать калории</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">🏠</span><p>Хотите заниматься дома&nbsp;— без боли в&nbsp;коленях и&nbsp;спине</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">💪</span><p>Хотите получить поддержку и&nbsp;не&nbsp;сорваться на&nbsp;третий день</p></div>
+      <ul class="forwhom__list">
+        <li><span class="forwhom__check">✓</span><span>Хотите влезть в&nbsp;любимое летнее платье или джинсы</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите увидеть стройную версию себя в&nbsp;зеркале</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите убрать &laquo;лишнее&raquo; с&nbsp;живота, боков и&nbsp;бёдер</span></li>
+        <li><span class="forwhom__check">✓</span><span>Не&nbsp;готовы сидеть на&nbsp;жёстких диетах и&nbsp;считать калории</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите заниматься дома&nbsp;— без боли в&nbsp;коленях и&nbsp;спине</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите получить поддержку и&nbsp;не&nbsp;сорваться на&nbsp;третий день</span></li>
+      </ul>
     </div>
 
     <p class="forwhom__conclusion">
@@ -2004,7 +2163,8 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   </div>
 </section>
 
-+ отзывы     -->
+<!-- ============================================================ -->
+<!-- 7. КЕЙСЫ + ОТЗЫВЫ (marquee)                                 -->
 <!-- ============================================================ -->
 <section class="section cases" id="cases">
   <div class="container">

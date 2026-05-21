@@ -25,7 +25,7 @@
   <!-- Preload hero-картинки — попадает в первый экран, ускоряет LCP -->
   <link rel="preload" as="image" href="https://static.tildacdn.com/tild3666-3131-4131-b165-646466333162/522A7887.jpg" fetchpriority="high" />
 
-  <link rel="stylesheet" href="styles.css?v=sj3-e" />
+  <link rel="stylesheet" href="styles.css?v=sj3-f" />
 </head>
 <body>
 
@@ -166,26 +166,45 @@
 <section class="section proof" id="proof">
   <div class="container">
     <div class="proof__head">
-      <h2 class="section__title">Думаете, 4&nbsp;сантиметра&nbsp;— <span class="proof__title-mark">это мало?</span></h2>
-      <p class="proof__lead">Посмотрите, насколько <strong>уменьшается живот</strong> у&nbsp;наших участниц</p>
+      <h2 class="section__title"><span class="proof__title-mark">&minus;4&nbsp;сантиметра</span> — мало?</h2>
+      <p class="proof__lead">Посмотрите, насколько живот становится стройнее на&nbsp;примере наших участниц</p>
     </div>
 
     <div class="proof__grid">
-      <figure class="proof-tile">
-        <img src="assets/cases/case-1.webp" alt="Результат участницы — до и после" loading="lazy" />
+      <figure class="proof-tile proof-tile--placeholder">
+        <div class="proof-tile__halves">
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ДО</span>
+          </div>
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ПОСЛЕ</span>
+          </div>
+        </div>
         <figcaption class="proof-tile__caption">−4 см</figcaption>
       </figure>
-      <figure class="proof-tile">
-        <img src="assets/cases/case-3.webp" alt="Результат участницы — до и после" loading="lazy" />
+      <figure class="proof-tile proof-tile--placeholder">
+        <div class="proof-tile__halves">
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ДО</span>
+          </div>
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ПОСЛЕ</span>
+          </div>
+        </div>
         <figcaption class="proof-tile__caption">−5 см</figcaption>
       </figure>
-      <figure class="proof-tile">
-        <img src="assets/cases/case-5.webp" alt="Результат участницы — до и после" loading="lazy" />
+      <figure class="proof-tile proof-tile--placeholder">
+        <div class="proof-tile__halves">
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ДО</span>
+          </div>
+          <div class="proof-tile__half">
+            <span class="proof-tile__half-label">ПОСЛЕ</span>
+          </div>
+        </div>
         <figcaption class="proof-tile__caption">−6 см</figcaption>
       </figure>
     </div>
-
-    <p class="proof__footnote">И&nbsp;это не&nbsp;всё&nbsp;— ниже на&nbsp;странице покажем больше живых кейсов</p>
   </div>
 </section>
 
@@ -371,21 +390,23 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- 6. КАК ИЗМЕНИЛИСЬ УЧАСТНИЦЫ — единый грид кейсы <!-- 6. ДЛЯ КОГО — кому Стройный живот поможет                          -->
+<!-- 6. ДЛЯ КОГО — красный блок                                   -->
 <!-- ============================================================ -->
-<section class="section forwhom" id="forwhom">
+<section class="section forwhom forwhom--red" id="forwhom">
   <div class="container">
-    <div class="forwhom__head">
-<h2 class="section__title">У&nbsp;вас получится сбросить <span class="forwhom__title-accent">4&nbsp;сантиметра к&nbsp;лету</span>, если&nbsp;вы:</h2>
-    </div>
+    <div class="forwhom__card-big">
+      <div class="forwhom__head">
+        <h2 class="forwhom__h2">У&nbsp;вас получится сбросить <span class="forwhom__h2-accent">4&nbsp;сантиметра к&nbsp;лету</span>, если&nbsp;вы:</h2>
+      </div>
 
-    <div class="forwhom__grid">
-      <div class="forwhom__card"><span class="forwhom__card-icon">👗</span><p>Хотите влезть в&nbsp;любимое летнее платье или джинсы</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">✨</span><p>Хотите увидеть стройную версию себя в&nbsp;зеркале</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">📏</span><p>Хотите убрать &laquo;лишнее&raquo; с&nbsp;живота, боков и&nbsp;бёдер</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">🥗</span><p>Не&nbsp;готовы сидеть на&nbsp;жёстких диетах и&nbsp;считать калории</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">🏠</span><p>Хотите заниматься дома&nbsp;— без боли в&nbsp;коленях и&nbsp;спине</p></div>
-      <div class="forwhom__card"><span class="forwhom__card-icon">💪</span><p>Хотите получить поддержку и&nbsp;не&nbsp;сорваться на&nbsp;третий день</p></div>
+      <ul class="forwhom__list">
+        <li><span class="forwhom__check">✓</span><span>Хотите влезть в&nbsp;любимое летнее платье или джинсы</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите увидеть стройную версию себя в&nbsp;зеркале</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите убрать &laquo;лишнее&raquo; с&nbsp;живота, боков и&nbsp;бёдер</span></li>
+        <li><span class="forwhom__check">✓</span><span>Не&nbsp;готовы сидеть на&nbsp;жёстких диетах и&nbsp;считать калории</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите заниматься дома&nbsp;— без боли в&nbsp;коленях и&nbsp;спине</span></li>
+        <li><span class="forwhom__check">✓</span><span>Хотите получить поддержку и&nbsp;не&nbsp;сорваться на&nbsp;третий день</span></li>
+      </ul>
     </div>
 
     <p class="forwhom__conclusion">
@@ -394,7 +415,8 @@
   </div>
 </section>
 
-+ отзывы     -->
+<!-- ============================================================ -->
+<!-- 7. КЕЙСЫ + ОТЗЫВЫ (marquee)                                 -->
 <!-- ============================================================ -->
 <section class="section cases" id="cases">
   <div class="container">
