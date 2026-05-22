@@ -1549,13 +1549,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   border-radius: 999px;
 }
 
-/* Конкретные фото каждого кейса (background-image) */
-.proof-tile__half--c1b { background-image: url('assets/proof/case-1-before.webp'); }
-.proof-tile__half--c1a { background-image: url('assets/proof/case-1-after.webp');  }
-.proof-tile__half--c2b { background-image: url('assets/proof/case-2-before.webp'); background-position: center 30%; }
-.proof-tile__half--c2a { background-image: url('assets/proof/case-2-after.webp');  background-position: center 30%; }
-.proof-tile__half--c3b { background-image: url('assets/proof/case-3-before.webp'); background-position: center 35%; }
-.proof-tile__half--c3a { background-image: url('assets/proof/case-3-after.webp');  background-position: center 35%; }
+/* Сплит-плитки: настоящие правила ниже, после placeholder-блока */
 .proof-tile__caption {
   position: absolute;
   bottom: 16px; right: 16px;
@@ -1670,6 +1664,36 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 @media (max-width: 540px) {
   .proof-tile__half-label { font-size: 22px; }
 }
+
+/* ================================================================
+   PROOF — сплит-плитки с реальными фото (без зазоров)
+   Поднимаю специфичность: .proof-tile--split .proof-tile__half--cXY
+   ================================================================ */
+.proof-tile--split .proof-tile__halves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%; height: 100%;
+  position: absolute;
+  inset: 0;
+  gap: 0;
+}
+.proof-tile--split .proof-tile__half {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0 !important;
+}
+.proof-tile--split .proof-tile__half--c2b {
+  background: url('assets/proof/case-2-before.webp') 78% 30% / cover no-repeat;
+} /* левая половинка кейса 2 — сдвиг вправо, чтобы видно было руки */
+.proof-tile--split .proof-tile__half--c2a {
+  background: url('assets/proof/case-2-after.webp')  center 30% / cover no-repeat;
+}
+.proof-tile--split .proof-tile__half--c3b {
+  background: url('assets/proof/case-3-before.webp') 75% 65% / cover no-repeat;
+} /* левая половинка кейса 3 — к центру, ниже (чтобы убрать зазор снизу) */
+.proof-tile--split .proof-tile__half--c3a {
+  background: url('assets/proof/case-3-after.webp')  25% 50% / cover no-repeat;
+} /* правая половинка кейса 3 — к центру */
 
 /* ================================================================
    FORWHOM — красная карточка (большая, как hero)
