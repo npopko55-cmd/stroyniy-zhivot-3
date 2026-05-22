@@ -1683,10 +1683,10 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   border: 0 !important;
 }
 .proof-tile--split .proof-tile__half--c2b {
-  background: url('assets/proof/case-2-before.webp') 78% 30% / cover no-repeat;
-} /* левая половинка кейса 2 — сдвиг вправо, чтобы видно было руки */
+  background: url('assets/proof/case-2-before.webp?v=2') 78% 35% / cover no-repeat;
+} /* левая половинка кейса 2 — сдвиг вправо, чтобы видно было руки; даты обрезаны */
 .proof-tile--split .proof-tile__half--c2a {
-  background: url('assets/proof/case-2-after.webp')  center 30% / cover no-repeat;
+  background: url('assets/proof/case-2-after.webp?v=2')  center 35% / cover no-repeat;
 }
 .proof-tile--split .proof-tile__half--c3b {
   background: url('assets/proof/case-3-before.webp') 75% 65% / cover no-repeat;
