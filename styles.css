@@ -1689,8 +1689,8 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   background: url('assets/proof/case-2-after.webp?v=2')  center 35% / cover no-repeat;
 }
 .proof-tile--split .proof-tile__half--c3b {
-  background: url('assets/proof/case-3-before.webp') 75% 65% / cover no-repeat;
-} /* левая половинка кейса 3 — к центру, ниже (чтобы убрать зазор снизу) */
+  background: url('assets/proof/case-3-before.webp') 75% 100% / cover no-repeat;
+} /* левая половинка кейса 3 — к центру + анкор низа фото к низу плитки (без зазора снизу) */
 .proof-tile--split .proof-tile__half--c3a {
   background: url('assets/proof/case-3-after.webp')  25% 50% / cover no-repeat;
 } /* правая половинка кейса 3 — к центру */
