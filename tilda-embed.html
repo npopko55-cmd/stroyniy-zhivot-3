@@ -1710,18 +1710,19 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   background-repeat: no-repeat;
   border: 0 !important;
 }
+/* Зум +20% чтобы обрезать пустые края (стену/пол) и анкор к нужному краю */
 .proof-tile--split .proof-tile__half--c2b {
-  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2-before.webp?v=2') 78% 35% / cover no-repeat;
-} /* левая половинка кейса 2 — сдвиг вправо, чтобы видно было руки; даты обрезаны */
+  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2-before.webp?v=2') 78% 100% / auto 120% no-repeat;
+} /* левая половинка кейса 2 — анкор низа (срезает стену сверху) */
 .proof-tile--split .proof-tile__half--c2a {
-  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2-after.webp?v=2')  center 35% / cover no-repeat;
-}
+  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2-after.webp?v=2')  50% 100% / auto 120% no-repeat;
+} /* правая половинка кейса 2 — анкор низа */
 .proof-tile--split .proof-tile__half--c3b {
-  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3-before.webp') 75% 100% / cover no-repeat;
-} /* левая половинка кейса 3 — к центру + анкор низа фото к низу плитки (без зазора снизу) */
+  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3-before.webp') 75% 50% / auto 120% no-repeat;
+} /* левая половинка кейса 3 — зум, без пола снизу и без обоев сверху */
 .proof-tile--split .proof-tile__half--c3a {
-  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3-after.webp')  25% 50% / cover no-repeat;
-} /* правая половинка кейса 3 — к центру */
+  background: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3-after.webp')  25% 50% / auto 120% no-repeat;
+} /* правая половинка кейса 3 — зум, к центру */
 
 /* ================================================================
    FORWHOM — красная карточка (большая, как hero)
