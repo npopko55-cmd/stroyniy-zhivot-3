@@ -1299,8 +1299,8 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   position: absolute;
   bottom: 18px;
   left: 18px;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   transform: rotate(-8deg);
   filter: drop-shadow(0 10px 22px rgba(31,19,0,0.32));
   pointer-events: none;
@@ -1313,7 +1313,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .hero__star-text {
   position: absolute;
-  inset: 0;
+  inset: 22% 18%;  /* отступ от краёв звезды чтобы текст был в «теле», не на иглах */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1324,9 +1324,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-weight: 700;
   line-height: 1;
 }
-.hero__star-line1 { font-size: 22px; }
-.hero__star-line2 { font-size: 40px; margin-top: 2px; letter-spacing: -1px; }
-.hero__star-line3 { font-size: 18px; margin-top: 4px; }
+.hero__star-line1 { font-size: 20px; }
+.hero__star-line2 { font-size: 44px; margin-top: 2px; letter-spacing: -1px; }
+.hero__star-line3 { font-size: 17px; margin-top: 4px; white-space: nowrap; }
 
 @media (max-width: 900px) {
   .hero__image { min-height: 380px; }

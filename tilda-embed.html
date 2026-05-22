@@ -1327,8 +1327,8 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   position: absolute;
   bottom: 18px;
   left: 18px;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   transform: rotate(-8deg);
   filter: drop-shadow(0 10px 22px rgba(31,19,0,0.32));
   pointer-events: none;
@@ -1341,7 +1341,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .hero__star-text {
   position: absolute;
-  inset: 0;
+  inset: 22% 18%;  /* отступ от краёв звезды чтобы текст был в «теле», не на иглах */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1352,9 +1352,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-weight: 700;
   line-height: 1;
 }
-.hero__star-line1 { font-size: 22px; }
-.hero__star-line2 { font-size: 40px; margin-top: 2px; letter-spacing: -1px; }
-.hero__star-line3 { font-size: 18px; margin-top: 4px; }
+.hero__star-line1 { font-size: 20px; }
+.hero__star-line2 { font-size: 44px; margin-top: 2px; letter-spacing: -1px; }
+.hero__star-line3 { font-size: 17px; margin-top: 4px; white-space: nowrap; }
 
 @media (max-width: 900px) {
   .hero__image { min-height: 380px; }
@@ -1967,7 +1967,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         <div class="hero__image" style="background-image:url('https://static.tildacdn.com/tild3666-3131-4131-b165-646466333162/522A7887.jpg');"></div>
         <div class="hero__star" aria-label="Минус 4 сантиметра за 10 дней">
           <svg class="hero__star-shape" viewBox="0 0 200 200" aria-hidden="true">
-            <polygon points="100,4 119,68 184,52 142,104 188,156 121,148 108,196 92,148 25,156 71,104 29,52 94,68" fill="#FFD400"/>
+            <polygon points="100,5 132.5,21.5 167.2,32.8 178.5,67.5 195,100 178.5,132.5 167.2,167.2 132.5,178.5 100,195 67.5,178.5 32.8,167.2 21.5,132.5 5,100 21.5,67.5 32.8,32.8 67.5,21.5" fill="#FFD400"/>
           </svg>
           <div class="hero__star-text">
             <span class="hero__star-line1">Минус</span>
@@ -1988,7 +1988,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   <div class="container">
     <div class="program__head">
 <h2 class="section__title program__title">
-        Мы разработали программу, которая <span class="program__title-mark">заставит&nbsp;ваш живот стройнеть</span>
+        Мы собрали программу, после которой <span class="program__title-mark">живот становится стройнее</span>
       </h2>
       <p class="program__lead">
         Каждое упражнение, каждое блюдо в&nbsp;плане питания, каждая вспомогательная практика&nbsp;— будут способствовать вашей стройности.
