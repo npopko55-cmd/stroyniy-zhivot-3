@@ -1171,6 +1171,11 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   box-shadow: 0 0 0 4px rgba(255,182,0,0.25);
   animation: pulse-dot 2s ease-in-out infinite;
 }
+.hero__chip-bolt {
+  color: #FFB600;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(255,182,0,0.45));
+}
 @keyframes pulse-dot {
   0%, 100% { box-shadow: 0 0 0 4px rgba(255,182,0,0.25); }
   50% { box-shadow: 0 0 0 8px rgba(255,182,0,0.10); }
@@ -1316,6 +1321,40 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   color: var(--color-muted);
   margin-top: 2px;
 }
+
+/* Звезда «Минус 4 см за 10 дней» на hero-фото */
+.hero__star {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  width: 150px;
+  height: 150px;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 10px 22px rgba(31,19,0,0.32));
+  pointer-events: none;
+  z-index: 3;
+}
+.hero__star-shape {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero__star-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #1f1300;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  line-height: 1;
+}
+.hero__star-line1 { font-size: 22px; }
+.hero__star-line2 { font-size: 40px; margin-top: 2px; letter-spacing: -1px; }
+.hero__star-line3 { font-size: 18px; margin-top: 4px; }
 
 @media (max-width: 900px) {
   .hero__image { min-height: 380px; }
@@ -1850,7 +1889,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
     <div class="header__actions">
       <a href="#rates" class="btn btn--primary btn--sm">Получить интенсив</a>
-      <a href="https://clck.ru/3RpVut" class="btn btn--outline btn--sm" target="_blank" rel="noopener">Личный кабинет</a>
     </div>
   </div>
 </header>
@@ -1864,7 +1902,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     <a href="#about">Что такое интенсив</a>
     <a href="#forwhom">Для кого</a>
     <a href="#rates">Получить интенсив</a>
-    <a href="https://clck.ru/3RpVut" target="_blank" rel="noopener">Личный кабинет</a>
     <a href="#contacts">Контакты</a>
     <a href="https://walk-walk.ru/blog/" target="_blank" rel="noopener">Блог</a>
   </nav>
@@ -1898,18 +1935,15 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     <div class="hero__grid">
       <div class="hero__card">
         <div class="hero__chip">
-          <span class="hero__chip-dot"></span>
+          <svg class="hero__chip-bolt" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <path d="M13 2L4.09 12.97c-.39.48-.05 1.18.58 1.18H10v8.32c0 .94 1.2 1.34 1.77.59L20.5 11.09c.36-.47.03-1.15-.57-1.15H14V2.68C14 1.74 12.78 1.34 12.21 2.09L13 2z"/>
+          </svg>
           Флагманский интенсив от&nbsp;клуба Шагай Дома
         </div>
 
         <h1 class="hero__title">Шагаем к&nbsp;стройному животу <span class="hero__title-accent">3.0</span></h1>
 
         <p class="hero__lead">Комплекс упражнений, который за&nbsp;10&nbsp;дней уберёт от&nbsp;4&nbsp;сантиметров с&nbsp;вашей талии</p>
-
-        <div class="hero__promo hero__promo--script">
-          <span class="hero__promo-num">&minus;4&nbsp;см</span>
-          <span class="hero__promo-text">за 10 дней&nbsp;— легко!</span>
-        </div>
 
         <a href="#rates" class="btn btn--white btn--lg btn--block hero__cta">
           <span>Получить интенсив</span>
@@ -1931,6 +1965,16 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
       <div class="hero__image-wrap">
         <div class="hero__image" style="background-image:url('https://static.tildacdn.com/tild3666-3131-4131-b165-646466333162/522A7887.jpg');"></div>
+        <div class="hero__star" aria-label="Минус 4 сантиметра за 10 дней">
+          <svg class="hero__star-shape" viewBox="0 0 200 200" aria-hidden="true">
+            <polygon points="100,4 119,68 184,52 142,104 188,156 121,148 108,196 92,148 25,156 71,104 29,52 94,68" fill="#FFD400"/>
+          </svg>
+          <div class="hero__star-text">
+            <span class="hero__star-line1">Минус</span>
+            <span class="hero__star-line2">4&nbsp;см</span>
+            <span class="hero__star-line3">за&nbsp;10&nbsp;дней</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1969,7 +2013,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 <section class="section proof" id="proof">
   <div class="container">
     <div class="proof__head">
-      <h2 class="section__title"><span class="proof__title-mark">&minus;4&nbsp;сантиметра</span> — мало?</h2>
+      <h2 class="section__title">Интенсив, который приведёт <span class="proof__title-mark">зону живота и&nbsp;талии</span> в&nbsp;порядок!</h2>
       <p class="proof__lead">Посмотрите, насколько живот становится стройнее на&nbsp;примере наших участниц</p>
     </div>
 
@@ -1979,18 +2023,18 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <div class="proof-tile__half proof-tile__half--c2b" aria-label="До"></div>
           <div class="proof-tile__half proof-tile__half--c2a" aria-label="После"></div>
         </div>
-        <figcaption class="proof-tile__caption">−4 см</figcaption>
+        <figcaption class="proof-tile__caption">Минус 4&nbsp;см</figcaption>
       </figure>
       <figure class="proof-tile proof-tile--split">
         <div class="proof-tile__halves">
           <div class="proof-tile__half proof-tile__half--c3b" aria-label="До"></div>
           <div class="proof-tile__half proof-tile__half--c3a" aria-label="После"></div>
         </div>
-        <figcaption class="proof-tile__caption">−5 см</figcaption>
+        <figcaption class="proof-tile__caption">Минус 5&nbsp;см</figcaption>
       </figure>
       <figure class="proof-tile">
         <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-1.webp" alt="Результат участницы — до и после" loading="lazy" />
-        <figcaption class="proof-tile__caption">−6 см</figcaption>
+        <figcaption class="proof-tile__caption">Минус 6&nbsp;см</figcaption>
       </figure>
     </div>
   </div>
