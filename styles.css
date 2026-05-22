@@ -1523,7 +1523,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   border-radius: 18px;
   overflow: hidden;
   background: var(--color-soft);
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   box-shadow: 0 14px 36px rgba(31,19,0,0.10);
   transition: transform .25s, box-shadow .25s;
 }
