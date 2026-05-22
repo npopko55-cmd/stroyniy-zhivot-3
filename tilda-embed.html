@@ -1552,19 +1552,54 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   margin: 0;
   border-radius: 18px;
   overflow: hidden;
-  background: #fff;
-  aspect-ratio: 3 / 2;            /* совпадает с пропорцией коллажей */
+  background: var(--color-soft);
+  aspect-ratio: 3 / 4;             /* вертикальная как заглушка */
   box-shadow: 0 14px 36px rgba(31,19,0,0.10);
   transition: transform .25s, box-shadow .25s;
 }
 .proof-tile:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(31,19,0,0.18); }
-.proof-tile img {
+
+/* Две половинки рядом — каждая с фоном через CSS */
+.proof-tile__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%; height: 100%;
-  object-fit: contain;             /* показываем коллаж целиком */
-  object-position: center center;
-  display: block;
-  background: var(--color-soft);   /* фон-плитка если пропорция не совпала */
 }
+.proof-tile__half {
+  position: relative;
+  background-size: cover;
+  background-position: center 38%;   /* живот в центре кадра */
+  background-color: var(--color-soft);
+}
+.proof-tile__half:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.7);
+}
+.proof-tile__label {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(31,19,0,0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-family: var(--font-b);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Конкретные фото каждого кейса (background-image) */
+.proof-tile__half--c1b { background-image: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-1-before.webp'); }
+.proof-tile__half--c1a { background-image: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-1-after.webp');  }
+.proof-tile__half--c2b { background-image: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2-before.webp'); background-position: center 30%; }
+.proof-tile__half--c2a { background-image: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2-after.webp');  background-position: center 30%; }
+.proof-tile__half--c3b { background-image: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3-before.webp'); background-position: center 35%; }
+.proof-tile__half--c3a { background-image: url('https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3-after.webp');  background-position: center 35%; }
 .proof-tile__caption {
   position: absolute;
   bottom: 16px; right: 16px;
@@ -1931,15 +1966,26 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
     <div class="proof__grid">
       <figure class="proof-tile">
-        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-1.webp" alt="Результат участницы — до и после" loading="lazy" />
+        <div class="proof-tile__pair">
+          <div class="proof-tile__half proof-tile__half--c1b"><span class="proof-tile__label">ДО</span></div>
+          <div class="proof-tile__half proof-tile__half--c1a"><span class="proof-tile__label">ПОСЛЕ</span></div>
+        </div>
         <figcaption class="proof-tile__caption">−4 см</figcaption>
       </figure>
+
       <figure class="proof-tile">
-        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-2.webp" alt="Результат участницы — до и после" loading="lazy" />
+        <div class="proof-tile__pair">
+          <div class="proof-tile__half proof-tile__half--c2b"><span class="proof-tile__label">ДО</span></div>
+          <div class="proof-tile__half proof-tile__half--c2a"><span class="proof-tile__label">ПОСЛЕ</span></div>
+        </div>
         <figcaption class="proof-tile__caption">−5 см</figcaption>
       </figure>
+
       <figure class="proof-tile">
-        <img src="https://npopko55-cmd.github.io/stroyniy-zhivot-3/assets/proof/case-3.webp" alt="Результат участницы — до и после" loading="lazy" />
+        <div class="proof-tile__pair">
+          <div class="proof-tile__half proof-tile__half--c3b"><span class="proof-tile__label">ДО</span></div>
+          <div class="proof-tile__half proof-tile__half--c3a"><span class="proof-tile__label">ПОСЛЕ</span></div>
+        </div>
         <figcaption class="proof-tile__caption">−6 см</figcaption>
       </figure>
     </div>
