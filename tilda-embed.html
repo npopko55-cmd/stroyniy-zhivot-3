@@ -956,6 +956,23 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-style: normal; font-weight: 600;
 }
 
+/* Яркие emoji-пункты в тарифах (начинка интенсива) */
+.rate-card__features-bright {
+  padding-left: 0 !important;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-left: 6px;
+}
+.rate-card__features-bright::before { display: none !important; }
+.rate-card__bullet-emoji {
+  font-size: 18px;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
 .rate-card__timer {
   background: #1f1300; color: #fff;
   border-radius: var(--radius-md);
@@ -2017,7 +2034,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 <section class="section proof" id="proof">
   <div class="container">
     <div class="proof__head">
-      <h2 class="section__title">Интенсив, который приведёт <span class="proof__title-mark">зону живота и&nbsp;талии</span> в&nbsp;порядок!</h2>
+      <h2 class="section__title"><span class="proof__title-mark">Минус 4&nbsp;сантиметра</span> — мало?</h2>
       <p class="proof__lead">Посмотрите, насколько живот становится стройнее на&nbsp;примере наших участниц</p>
     </div>
 
@@ -2173,7 +2190,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     <div class="rates__grid">
 
       <article class="rate-card">
-        <span class="rate-card__badge-top rate-card__badge-top--bonus">2&nbsp;+&nbsp;1 в&nbsp;подарок</span>
+        <span class="rate-card__badge-top rate-card__badge-top--bonus">3&nbsp;вместо&nbsp;2!</span>
         <span class="rate-card__discount">Скидка 66%</span>
         <h3 class="rate-card__title">Стройный живот + Абонемент на 3 месяца</h3>
         <div class="rate-card__price">
@@ -2183,8 +2200,11 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 565 ₽</a>
         <ul class="rate-card__features">
-          <li class="rate-card__features-hero"><strong>Интенсив «Стройный живот 3.0»</strong></li>
-          <li class="rate-card__features-hero"><strong>Абонемент в клуб «Шагай Дома»:</strong></li>
+          <li class="rate-card__features-hero"><strong>Интенсив «Стройный живот 3.0»:</strong></li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🥧</span>Меню сочных и&nbsp;полезных пирогов от&nbsp;Шагай Дома</li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🧘‍♀️</span>Упражнения на&nbsp;диафрагму и&nbsp;осанку от&nbsp;Вики</li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🎁</span>Бонусное меню от&nbsp;диетолога</li>
+          <li class="rate-card__features-hero"><strong>Абонемент в&nbsp;клуб «Шагай Дома»:</strong></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 350+ шагательных тренировок</li>
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
@@ -2204,8 +2224,11 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 765 ₽</a>
         <ul class="rate-card__features">
-          <li class="rate-card__features-hero"><strong>Интенсив «Стройный живот 3.0»</strong></li>
-          <li class="rate-card__features-hero"><strong>Абонемент в клуб «Шагай Дома»:</strong></li>
+          <li class="rate-card__features-hero"><strong>Интенсив «Стройный живот 3.0»:</strong></li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🥧</span>Меню сочных и&nbsp;полезных пирогов от&nbsp;Шагай Дома</li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🧘‍♀️</span>Упражнения на&nbsp;диафрагму и&nbsp;осанку от&nbsp;Вики</li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🎁</span>Бонусное меню от&nbsp;диетолога</li>
+          <li class="rate-card__features-hero"><strong>Абонемент в&nbsp;клуб «Шагай Дома»:</strong></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 350+ шагательных тренировок</li>
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
@@ -2225,8 +2248,11 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 1 432 ₽</a>
         <ul class="rate-card__features">
-          <li class="rate-card__features-hero"><strong>Интенсив «Стройный живот 3.0»</strong></li>
-          <li class="rate-card__features-hero"><strong>Абонемент в клуб «Шагай Дома»:</strong></li>
+          <li class="rate-card__features-hero"><strong>Интенсив «Стройный живот 3.0»:</strong></li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🥧</span>Меню сочных и&nbsp;полезных пирогов от&nbsp;Шагай Дома</li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🧘‍♀️</span>Упражнения на&nbsp;диафрагму и&nbsp;осанку от&nbsp;Вики</li>
+          <li class="rate-card__features-bright"><span class="rate-card__bullet-emoji">🎁</span>Бонусное меню от&nbsp;диетолога</li>
+          <li class="rate-card__features-hero"><strong>Абонемент в&nbsp;клуб «Шагай Дома»:</strong></li>
           <li><em>Бесплатное пополнение шагательных тренировок и программ</em></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 350+ шагательных тренировок</li>

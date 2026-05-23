@@ -928,6 +928,23 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-style: normal; font-weight: 600;
 }
 
+/* Яркие emoji-пункты в тарифах (начинка интенсива) */
+.rate-card__features-bright {
+  padding-left: 0 !important;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-left: 6px;
+}
+.rate-card__features-bright::before { display: none !important; }
+.rate-card__bullet-emoji {
+  font-size: 18px;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
 .rate-card__timer {
   background: #1f1300; color: #fff;
   border-radius: var(--radius-md);
