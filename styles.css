@@ -1259,6 +1259,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   transition: transform .2s, background .2s;
 }
 .hero__cta:hover .hero__cta-arrow { transform: translateX(4px); background: #1f1300; }
+/* При нажатии — жёлтый круг (как на баннере) */
+.hero__cta:active .hero__cta-arrow,
+.hero__cta:focus .hero__cta-arrow { background: #FFB600; color: #1f1300; }
 
 /* Социальный пруф с аватарами */
 .hero__social-proof {
