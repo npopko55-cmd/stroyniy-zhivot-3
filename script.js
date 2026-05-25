@@ -145,4 +145,37 @@
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
+
+  /* ---------- 9. Яндекс.Метрика — JS-цели через data-metrika-goal ---------- */
+  /* Используем счётчик walk-walk.ru, который Tilda сама инжектит на страницу. */
+  function reachMetrikaGoal(goal) {
+    if (!goal) return;
+    try {
+      // Способ 1: глобальная ym() с первым найденным счётчиком
+      if (typeof window.ym === 'function' && window.Ya && window.Ya.Metrika2) {
+        var counters = window.Ya.Metrika2.counters && window.Ya.Metrika2.counters();
+        if (counters && counters.length) {
+          window.ym(counters[0].id, 'reachGoal', goal);
+          return;
+        }
+      }
+      // Способ 2: старая Ya.Metrika
+      if (window.Ya && window.Ya.Metrika && window.Ya.Metrika.counters) {
+        var c = window.Ya.Metrika.counters;
+        if (c[0] && typeof window.ym === 'function') {
+          window.ym(c[0].id, 'reachGoal', goal);
+          return;
+        }
+      }
+      // Способ 3: dataLayer / generic — fallback в console.log при отладке
+      if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+        window.dataLayer.push({ event: 'metrika-goal', goal: goal });
+      }
+    } catch (e) { /* silent */ }
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target && e.target.closest && e.target.closest('[data-metrika-goal]');
+    if (!t) return;
+    reachMetrikaGoal(t.dataset.metrikaGoal);
+  });
 })();
