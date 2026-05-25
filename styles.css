@@ -97,16 +97,30 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 .btn--block { width: 100%; }
 
 .btn--primary { background: var(--color-primary); color: #fff; }
-.btn--primary:hover { background: var(--color-primary-hover); color: #1f1300; }
-
 .btn--white { background: #fff; color: var(--color-text); border-color: #fff; font-family: var(--font-b); font-weight: 400; }
-.btn--white:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
-
 .btn--outline { background: transparent; color: var(--color-text); border-color: var(--color-discount); }
-.btn--outline:hover { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
-
 .btn--outline-white { background: transparent; color: #fff; border-color: #fff; }
-.btn--outline-white:hover { background: #fff; color: var(--color-primary); }
+
+/* Жёлтый hover/нажатие — единый стиль для всех CTA */
+@media (hover: hover) {
+  .btn--primary:hover,
+  .btn--white:hover,
+  .btn--outline:hover,
+  .btn--outline-white:hover {
+    background: var(--color-primary-hover);
+    color: #1f1300;
+    border-color: var(--color-primary-hover);
+  }
+}
+/* На мобилке :active + :focus — чтобы жёлтое срабатывало по тапу */
+.btn--primary:active, .btn--primary:focus,
+.btn--white:active, .btn--white:focus,
+.btn--outline:active, .btn--outline:focus,
+.btn--outline-white:active, .btn--outline-white:focus {
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  border-color: var(--color-primary-hover);
+}
 
 /* ======================== HEADER =============================== */
 .header {
@@ -876,13 +890,39 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   text-decoration: none;
   transition: background .15s, color .15s;
 }
-.rate-card__alt-link:hover { background: var(--color-primary); color: #fff; }
-/* На красном (featured) тарифе — белая обводка */
+/* Жёлтый ховер/нажатие */
+@media (hover: hover) {
+  .rate-card__alt-link:hover {
+    background: var(--color-primary-hover);
+    color: #1f1300;
+    border-color: var(--color-primary-hover);
+  }
+}
+.rate-card__alt-link:active,
+.rate-card__alt-link:focus {
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  border-color: var(--color-primary-hover);
+}
+
+/* На красном (featured) тарифе — белая обводка по умолчанию, жёлтая на ховере */
 .rate-card__alt-link--on-red {
   color: #fff;
   border-color: rgba(255,255,255,0.6);
 }
-.rate-card__alt-link--on-red:hover { background: #fff; color: var(--color-primary); border-color: #fff; }
+@media (hover: hover) {
+  .rate-card__alt-link--on-red:hover {
+    background: var(--color-primary-hover);
+    color: #1f1300;
+    border-color: var(--color-primary-hover);
+  }
+}
+.rate-card__alt-link--on-red:active,
+.rate-card__alt-link--on-red:focus {
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  border-color: var(--color-primary-hover);
+}
 .rate-card__price { display: flex; flex-direction: column; gap: 4px; }
 .rate-card__old {
   text-decoration: line-through;
@@ -1258,12 +1298,14 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-size: 18px;
   transition: transform .2s, background .2s;
 }
-/* Hover-эффект только на устройствах с настоящим hover (десктоп с мышкой).
-   На мобилке iOS Safari иначе залипает :hover после тапа и перебивает :active. */
+/* Hover на десктопе + active/focus на мобилке — стрелка-кружок жёлтая */
 @media (hover: hover) {
-  .hero__cta:hover .hero__cta-arrow { transform: translateX(4px); background: #1f1300; }
+  .hero__cta:hover .hero__cta-arrow {
+    transform: translateX(4px);
+    background: #FFB600;
+    color: #1f1300;
+  }
 }
-/* При нажатии — жёлтый круг (как на баннере) */
 .hero__cta:active .hero__cta-arrow,
 .hero__cta:focus .hero__cta-arrow {
   background: #FFB600 !important;
