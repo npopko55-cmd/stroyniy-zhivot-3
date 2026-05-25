@@ -851,6 +851,21 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-weight: 500;
   margin: 0 0 8px !important;
 }
+.popup__alt-link {
+  display: block;
+  margin: 12px auto 0;
+  padding: 13px 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: #fff;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.popup__alt-link:hover { background: var(--color-primary); color: #fff; }
 .rate-card__price { display: flex; flex-direction: column; gap: 4px; }
 .rate-card__old {
   text-decoration: line-through;
