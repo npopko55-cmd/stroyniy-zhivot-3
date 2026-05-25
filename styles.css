@@ -822,7 +822,17 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   box-shadow: 0 6px 16px rgba(0,0,0,.15);
   white-space: nowrap;
 }
-.rate-card__title { font-size: 22px; font-family: var(--font-h); font-weight: 500; }
+.rate-card__title {
+  font-size: 22px;
+  font-family: var(--font-h);
+  font-weight: 500;
+  min-height: 64px;  /* 2 строки — выравнивает цены по горизонтали во всех тарифах */
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 540px) {
+  .rate-card__title { min-height: 0; }  /* на мобиле каждая карточка идёт отдельно — выравнивание не нужно */
+}
 
 /* Bonus-бейдж «2+1 в подарок» — зелёный (выгода) */
 .rate-card__badge-top--bonus {
