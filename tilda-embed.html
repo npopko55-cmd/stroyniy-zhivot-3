@@ -879,21 +879,28 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-weight: 500;
   margin: 0 0 8px !important;
 }
-.popup__alt-link {
+/* «У меня уже есть абонемент» — ссылка-кнопка под основной CTA на тарифах */
+.rate-card__alt-link {
   display: block;
-  margin: 12px auto 0;
-  padding: 13px 20px;
+  margin: 10px auto 0;
+  padding: 12px 18px;
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-primary);
-  background: #fff;
+  background: transparent;
   border: 1.5px solid var(--color-primary);
   border-radius: 999px;
   text-decoration: none;
   transition: background .15s, color .15s;
 }
-.popup__alt-link:hover { background: var(--color-primary); color: #fff; }
+.rate-card__alt-link:hover { background: var(--color-primary); color: #fff; }
+/* На красном (featured) тарифе — белая обводка */
+.rate-card__alt-link--on-red {
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+.rate-card__alt-link--on-red:hover { background: #fff; color: var(--color-primary); border-color: #fff; }
 .rate-card__price { display: flex; flex-direction: column; gap: 4px; }
 .rate-card__old {
   text-decoration: line-through;
@@ -2226,6 +2233,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
         <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-3m">Получить интенсив</button>
+        <a href="https://my.walk-walk.ru/thinbelly" class="rate-card__alt-link" target="_blank" rel="noopener">У меня уже есть абонемент</a>
       </article>
 
       <article class="rate-card rate-card--featured">
@@ -2250,6 +2258,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
         <button type="button" class="btn btn--white btn--block" data-popup="popup-buy-6m">Получить интенсив</button>
+        <a href="https://my.walk-walk.ru/thinbelly" class="rate-card__alt-link rate-card__alt-link--on-red" target="_blank" rel="noopener">У меня уже есть абонемент</a>
       </article>
 
       <article class="rate-card">
@@ -2275,6 +2284,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
         <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-2y">Получить интенсив</button>
+        <a href="https://my.walk-walk.ru/thinbelly" class="rate-card__alt-link" target="_blank" rel="noopener">У меня уже есть абонемент</a>
       </article>
 
     </div>
@@ -2461,7 +2471,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     <div class="popup__widget">
       <script id="3cbe940a1f45f8d39a2b291b0a19847e915d7091" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1608663"></script>
     </div>
-    <a href="https://my.walk-walk.ru/thinbelly" class="popup__alt-link" target="_blank" rel="noopener">У меня уже есть абонемент</a>
   </div>
 </div>
 
@@ -2475,7 +2484,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     <div class="popup__widget">
       <script id="d498e7ad8c4a4437a049a7facf289b89866b8bdb" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1608668"></script>
     </div>
-    <a href="https://my.walk-walk.ru/thinbelly" class="popup__alt-link" target="_blank" rel="noopener">У меня уже есть абонемент</a>
   </div>
 </div>
 
@@ -2489,7 +2497,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     <div class="popup__widget">
       <script id="da5762a895a343514ae79d4ebb8669b26d8a8b59" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1608670"></script>
     </div>
-    <a href="https://my.walk-walk.ru/thinbelly" class="popup__alt-link" target="_blank" rel="noopener">У меня уже есть абонемент</a>
   </div>
 </div>
 
