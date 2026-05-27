@@ -146,7 +146,60 @@
     });
   });
 
-  /* ---------- 9. Яндекс.Метрика — JS-цели через data-metrika-goal ---------- */
+  /* ---------- 9. UTM-проброс на все ссылки walk-walk.ru ---------- */
+  /* GetCourse-виджет вкорячивает свою кнопку с захардкоженной ссылкой
+     (walk-walk.ru/thinbelly/6-months и т.п.) уже ПОСЛЕ того как Tilda
+     прокинула UTM по странице. Мы должны:
+     1) При загрузке — обновить все существующие ссылки
+     2) Через MutationObserver — обновлять любые НОВЫЕ ссылки (от виджета)
+     3) При клике (capture-фаза) — финальная страховка перед навигацией */
+  (function () {
+    var p = new URLSearchParams(window.location.search);
+    var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_referrer','gclid','yclid','fbclid','erid','from'];
+    var pairs = keys
+      .map(function (k) { return p.has(k) ? k + '=' + encodeURIComponent(p.get(k)) : null; })
+      .filter(Boolean);
+    if (!pairs.length) return;
+    var qs = pairs.join('&');
+    try { sessionStorage.setItem('walkwalk_utm', qs); } catch (e) {}
+
+    function applyUtm(a) {
+      if (!a || a.tagName !== 'A') return;
+      var href = a.getAttribute('href');
+      if (!href) return;
+      // только walk-walk.ru (любой поддомен)
+      if (!/walk-walk\.ru/i.test(href)) return;
+      // уже есть UTM — не трогаем
+      if (/[?&]utm_/.test(href)) return;
+      var sep = href.indexOf('?') === -1 ? '?' : '&';
+      a.setAttribute('href', href + sep + qs);
+    }
+
+    // 1. Все ссылки на момент загрузки
+    document.querySelectorAll('a[href]').forEach(applyUtm);
+
+    // 2. MutationObserver — догоняем ссылки от GetCourse-виджета
+    if (window.MutationObserver) {
+      var mo = new MutationObserver(function (mutations) {
+        mutations.forEach(function (m) {
+          m.addedNodes && m.addedNodes.forEach(function (node) {
+            if (node.nodeType !== 1) return;
+            if (node.tagName === 'A') applyUtm(node);
+            if (node.querySelectorAll) node.querySelectorAll('a[href]').forEach(applyUtm);
+          });
+        });
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // 3. Capture-фаза клика — финальная страховка (если виджет меняет href в последний момент)
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href]');
+      if (a) applyUtm(a);
+    }, true);
+  })();
+
+  /* ---------- 10. Яндекс.Метрика — JS-цели через data-metrika-goal ---------- */
   /* Счётчик walk-walk.ru (захардкожен) */
   var METRIKA_ID = 94057307;
   function reachMetrikaGoal(goal) {
